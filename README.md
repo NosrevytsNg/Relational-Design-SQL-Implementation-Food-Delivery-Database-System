@@ -139,9 +139,10 @@ CERTIFICATION ||--o{ RESTAURANTCERTIFICATION : assigned_to
 CUSTOMER }o--|| SUBURB : located_in
 RESTAURANT }o--|| SUBURB : located_in
 DRIVER }o--|| SUBURB : operates_in
+```
 
 This structure ensures data consistency, scalability, and normalized relationships between entities.
-```
+
 
 ## Key Database Concepts Demonstrated
 This project covers the full lifecycle of relational database engineering:
