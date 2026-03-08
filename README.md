@@ -1,4 +1,4 @@
-# FineFoods4U Food Delivery Database System <br> Relational Database Design | SQL Implementation | Business Analytics
+# 🍜 FineFoods4U Food Delivery Database System <br> Relational Database Design | SQL Implementation | Business Analytics
 
 ## Project Overview
 
