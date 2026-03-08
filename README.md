@@ -64,9 +64,7 @@ The database schema consists of several key entities:
 
 
 ## Database Structure
-
-erDiagram
-
+```mermaid
 erDiagram
 
 CUSTOMER {
@@ -143,6 +141,7 @@ RESTAURANT }o--|| SUBURB : located_in
 DRIVER }o--|| SUBURB : operates_in
 
 This structure ensures data consistency, scalability, and normalized relationships between entities.
+```
 
 ## Key Database Concepts Demonstrated
 This project covers the full lifecycle of relational database engineering:
