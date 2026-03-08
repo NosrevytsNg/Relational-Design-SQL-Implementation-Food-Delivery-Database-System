@@ -65,40 +65,7 @@ The database schema consists of several key entities:
 
 ## Database Structure
 
-```mermaid
-flowchart LR
-
-Customer[Customer]
-Order[Customer Order]
-
-%% Lower section (Driver chain)
-subgraph Delivery Progress
-direction LR
-Driver[Driver]
-Delivery[Delivery]
-Delivery --> Driver
-end
-
-%% Upper section (Food chain)
-subgraph Food System
-direction LR
-OrderItem[Order Item]
-Dish[Dish]
-Restaurant[Restaurant]
-Certification[Certification]
-RestaurantCertification[Restaurant Certification]
-
-OrderItem --> Dish
-Dish --> Restaurant
-Restaurant --> RestaurantCertification
-RestaurantCertification --> Certification
-end
-
-Customer --> Order
-Order --> OrderItem
-Order --> Restaurant
-Order --> Delivery
-```
+<img width="1247" height="1241" alt="Conceptual Design ERD drawio" src="https://github.com/user-attachments/assets/2192107f-2d57-4eb7-b49a-2f8094f7603f" />
 
 
 This structure ensures data consistency, scalability, and normalized relationships between entities.
