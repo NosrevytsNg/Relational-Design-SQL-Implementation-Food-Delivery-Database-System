@@ -65,80 +65,31 @@ The database schema consists of several key entities:
 
 ## Database Structure
 ```mermaid
-erDiagram LR
+flowchart LR
 
-CUSTOMER {
-    int CustomerID
-    string FirstName
-    string LastName
-    string Email
-    string PhoneNumber
-    string Address
-    int SuburbID
-}
+Customer[Customer]
+Order[Customer Order]
+OrderItem[Order Item]
+Dish[Dish]
+Restaurant[Restaurant]
+Driver[Driver]
+Suburb[Suburb]
+Certification[Certification]
+RestaurantCertification[Restaurant Certification]
 
-SUBURB {
-    int SuburbID
-    string SuburbName
-}
+Customer --> Order
+Order --> OrderItem
+OrderItem --> Dish
+Dish --> Restaurant
 
-RESTAURANT {
-    int RestaurantID
-    string RestaurantName
-    string Address
-    int SuburbID
-}
+Order --> Driver
 
-DISH {
-    int DishID
-    string DishName
-    int PreparationTime
-    boolean Vegetarian
-    int RestaurantID
-}
+Customer --> Suburb
+Restaurant --> Suburb
+Driver --> Suburb
 
-DRIVER {
-    int DriverID
-    string DriverStatus
-    int SuburbID
-}
-
-CUSTOMERORDER {
-    int OrderID
-    date OrderDate
-    int CustomerID
-    int DriverID
-}
-
-ORDERITEM {
-    int OrderItemID
-    int OrderID
-    int DishID
-    int Quantity
-}
-
-CERTIFICATION {
-    int CertificationID
-    string CertificationName
-}
-
-RESTAURANTCERTIFICATION {
-    int RestaurantID
-    int CertificationID
-}
-
-CUSTOMER ||--o{ CUSTOMERORDER : places
-CUSTOMERORDER ||--o{ ORDERITEM : contains
-ORDERITEM }o--|| DISH : includes
-DISH }o--|| RESTAURANT : offered_by
-CUSTOMERORDER }o--|| DRIVER : delivered_by
-
-RESTAURANT ||--o{ RESTAURANTCERTIFICATION : holds
-CERTIFICATION ||--o{ RESTAURANTCERTIFICATION : assigned_to
-
-CUSTOMER }o--|| SUBURB : located_in
-RESTAURANT }o--|| SUBURB : located_in
-DRIVER }o--|| SUBURB : operates_in
+Restaurant --> RestaurantCertification
+Certification --> RestaurantCertification
 ```
 
 This structure ensures data consistency, scalability, and normalized relationships between entities.
