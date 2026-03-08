@@ -65,7 +65,7 @@ The database schema consists of several key entities:
 
 ## Database Structure
 ```mermaid
-erDiagram
+erDiagram LR
 
 CUSTOMER {
     int CustomerID
