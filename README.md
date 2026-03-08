@@ -72,11 +72,11 @@ Customer[Customer]
 Order[Customer Order]
 
 %% Upper section (Driver chain)
-subgraph Delivery
+subgraph Delivery Progress
 direction LR
 Driver[Driver]
-Suburb[Suburb]
-Driver --> Suburb
+Delivery[Delivery]
+Delivery --> Driver
 end
 
 %% Lower section (Food chain)
@@ -97,8 +97,6 @@ end
 Customer --> Order
 Order --> OrderItem
 Order --> Driver
-Customer --> Suburb
-Restaurant --> Suburb
 ```
 
 
