@@ -91,12 +91,13 @@ RestaurantCertification[Restaurant Certification]
 OrderItem --> Dish
 Dish --> Restaurant
 Restaurant --> RestaurantCertification
-Certification --> RestaurantCertification
+RestaurantCertification --> Certification
 end
 
 Customer --> Order
 Order --> OrderItem
-Order --> Driver
+Order --> Restaurant
+Order --> Delivery
 ```
 
 
