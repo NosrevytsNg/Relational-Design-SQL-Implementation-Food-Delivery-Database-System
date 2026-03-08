@@ -71,7 +71,7 @@ flowchart LR
 Customer[Customer]
 Order[Customer Order]
 
-%% Upper section (Driver chain)
+%% Lower section (Driver chain)
 subgraph Delivery Progress
 direction LR
 Driver[Driver]
@@ -79,8 +79,23 @@ Delivery[Delivery]
 Delivery --> Driver
 end
 
-%% Lower section (Food chain)
-subgraph Food_System
+%% Upper section (Food chain)
+subgraph Food System
+direction LR
+OrderItem[Order Item]
+Dish[Dish]
+Restaurant[Restaurant]
+Certification[Certification]
+RestaurantCertification[Restaurant Certification]
+
+OrderItem --> Dish
+Dish --> Restaurant
+Restaurant --> RestaurantCertification
+RestaurantCertification --> Certification
+end
+
+%% Upper-Inner section (Food chain)
+subgraph Restaurant Procedures
 direction LR
 OrderItem[Order Item]
 Dish[Dish]
