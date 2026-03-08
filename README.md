@@ -77,12 +77,12 @@ Suburb[Suburb]
 Certification[Certification]
 RestaurantCertification[Restaurant Certification]
 
+Order --> Driver
+
 Customer --> Order
 Order --> OrderItem
 OrderItem --> Dish
 Dish --> Restaurant
-
-Order --> Driver
 
 Customer --> Suburb
 Restaurant --> Suburb
