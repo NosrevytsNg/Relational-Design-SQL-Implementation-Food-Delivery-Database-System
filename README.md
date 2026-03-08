@@ -94,21 +94,6 @@ Restaurant --> RestaurantCertification
 RestaurantCertification --> Certification
 end
 
-%% Upper-Inner section (Food chain)
-subgraph Restaurant Procedures
-direction LR
-OrderItem[Order Item]
-Dish[Dish]
-Restaurant[Restaurant]
-Certification[Certification]
-RestaurantCertification[Restaurant Certification]
-
-OrderItem --> Dish
-Dish --> Restaurant
-Restaurant --> RestaurantCertification
-RestaurantCertification --> Certification
-end
-
 Customer --> Order
 Order --> OrderItem
 Order --> Restaurant
