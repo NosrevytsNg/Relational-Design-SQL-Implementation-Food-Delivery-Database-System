@@ -67,13 +67,77 @@ The database schema consists of several key entities:
 
 erDiagram
 
+erDiagram
+
+CUSTOMER {
+    int CustomerID
+    string FirstName
+    string LastName
+    string Email
+    string PhoneNumber
+    string Address
+    int SuburbID
+}
+
+SUBURB {
+    int SuburbID
+    string SuburbName
+}
+
+RESTAURANT {
+    int RestaurantID
+    string RestaurantName
+    string Address
+    int SuburbID
+}
+
+DISH {
+    int DishID
+    string DishName
+    int PreparationTime
+    boolean Vegetarian
+    int RestaurantID
+}
+
+DRIVER {
+    int DriverID
+    string DriverStatus
+    int SuburbID
+}
+
+CUSTOMERORDER {
+    int OrderID
+    date OrderDate
+    int CustomerID
+    int DriverID
+}
+
+ORDERITEM {
+    int OrderItemID
+    int OrderID
+    int DishID
+    int Quantity
+}
+
+CERTIFICATION {
+    int CertificationID
+    string CertificationName
+}
+
+RESTAURANTCERTIFICATION {
+    int RestaurantID
+    int CertificationID
+}
+
 CUSTOMER ||--o{ CUSTOMERORDER : places
 CUSTOMERORDER ||--o{ ORDERITEM : contains
-ORDERITEM }o--|| DISH : references
+ORDERITEM }o--|| DISH : includes
 DISH }o--|| RESTAURANT : offered_by
 CUSTOMERORDER }o--|| DRIVER : delivered_by
+
 RESTAURANT ||--o{ RESTAURANTCERTIFICATION : holds
 CERTIFICATION ||--o{ RESTAURANTCERTIFICATION : assigned_to
+
 CUSTOMER }o--|| SUBURB : located_in
 RESTAURANT }o--|| SUBURB : located_in
 DRIVER }o--|| SUBURB : operates_in
