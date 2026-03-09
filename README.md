@@ -137,55 +137,15 @@ These queries demonstrate how relational databases support business intelligence
 - Relational Schema Design
 - Database Normalization
 
-<!--
-```
-flowchart TB
+## Author
 
-Customer[Customer]
-Order[Customer Order]
+**Styverson Ng**
 
-%% Upper section (Driver chain)
-subgraph Delivery
-direction LR
-Driver[Driver]
-Suburb[Suburb]
-Driver --> Suburb
-<!--
-end
--->
+Bachelor of Information Technology <br>
+Artificial Intelligence & Autonomous Systems <br>
+Cyber Security & Cyber Forensics <br>
 
-<!--
-%% Lower section (Food chain)
-subgraph Food_System
-direction LR
-OrderItem[Order Item]
-Dish[Dish]
-Restaurant[Restaurant]
-Certification[Certification]
-RestaurantCertification[Restaurant Certification]
-
-OrderItem --> Dish
-<!--
-Dish --> Restaurant
-<!--
-Restaurant --> RestaurantCertification
-<!--
-Certification --> RestaurantCertification
-<!--
-end
--->
-<!--
-Customer --> Order
-<!--
-Order --> OrderItem
-<!--
-Order --> Driver
-<!--
-Customer --> Suburb
-<!--
-Restaurant --> Suburb
-<!-- ```
---->
+Murdoch University <br>
 
 
 
