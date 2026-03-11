@@ -137,7 +137,7 @@ These queries demonstrate how relational databases support business intelligence
 - Relational Schema Design
 - Database Normalization
 
-## Author
+## 🖋️ Author
 
 **Styverson Ng**
 
